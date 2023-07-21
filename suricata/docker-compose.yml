@@ -1,0 +1,14 @@
+version: '3.6'
+
+services:
+  suricata:
+    image: jasonish/suricata
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+      - SYS_NICE
+    volumes:
+      - "./etc:/etc/suricata"
+      - "./traffic:/var/log/suricata"
+    command: -i enp0 not port 22
