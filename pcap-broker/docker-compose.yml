@@ -1,0 +1,14 @@
+version: "3.2"
+
+services:
+  pcap-broker-remote-host:
+    build: ./pcap-broker
+    restart: always
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+      - SYS_NICE
+    environment:
+      PCAP_COMMAND: tcpdump -U --immediate-mode -ni eth0 not port 22 and not port 4242 -s 65535 -w -
+      LISTEN_ADDRESS: "127.0.0.1:4242"

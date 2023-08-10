@@ -4,3 +4,6 @@
 [submodule "DestructiveFarm"]
 	path = DestructiveFarm
 	url = https://github.com/CzechCyberTeam/DestructiveFarm
+[submodule "pcap-broker/pcap-broker"]
+	path = pcap-broker/pcap-broker
+	url = https://github.com/fox-it/pcap-broker
